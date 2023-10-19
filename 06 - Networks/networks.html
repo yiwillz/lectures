@@ -117,15 +117,13 @@
                 simpleNodes.attr('cx', d => d.x)
                             .attr('cy', d => d.y);
                 simpleLabels.attr('x', d => d.x)
-                            .attr('y', d => d.y);
-                            
-                
+                            .attr('y', d => d.y);                
            }
 
            // Now instruct the simulation to call updateLayout at every iteration.
            // For debugging, we'll print out the nodes dataset when the simulation stops.
            // Notice that each item in nodes now has extra attributes: index, vx, vy, x, y.
-           simulation1.on('tick', updateLayout1)
+           simulation1//.on('tick', updateLayout1)
                       .on('end', () => { console.log(nodes); });
         
            /* 
@@ -163,7 +161,8 @@
             // and call an updated layout function that 
             // also updates line positions
             simulation1.force('links', linkForce1)
-                        .on('tick', updateLayout2);
+                        .on('tick', updateLayout2)
+           
 
         //     // Now draw the links on the svg
             let simpleLinks = svgSimple.selectAll('.link')

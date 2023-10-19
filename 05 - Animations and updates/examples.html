@@ -434,10 +434,6 @@
                     const svg5 = d3.select('#svg5');
                     const data = updateStates();
 
-                    var test = svg5.selectAll('circle');
-                console.log(test);
-
-                
                     svg5.selectAll('g')
                         .data(data, d => d.abbrev)
                         .join(
